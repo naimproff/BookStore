@@ -8,9 +8,19 @@ namespace BookStoreOnline.Controllers
 {
     public class HomeController : Controller
     {
-        public string Index()
+        public ViewResult Index()
         {
-            return "SHANTA";
+            return View();
+        }
+
+        public ViewResult About()
+        {
+            return View();
+        }
+
+        public ViewResult Contact()
+        {
+            return View();
         }
     }
 }
