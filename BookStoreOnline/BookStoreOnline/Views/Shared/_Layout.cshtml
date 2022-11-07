@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Book Store</title>
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm mb-3">
+            <div class="container">
+                <a class="navbar-brand" href="~/home/index">eBook</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a asp-controller="Home" asp-action="Index" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-controller="Home" asp-action="About" class="nav-link">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-controller="Home" asp-action="Contact" class="nav-link">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-controller="Book" asp-action="GetAllBooks" class="nav-link">All Books</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex gap-2">
+                        <button class="btn btn-outline-dark btn-sm" type="submit">Login</button>
+                        <button class="btn btn-outline-dark btn-sm" type="submit">Register</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main" style="min-height: 75%">
+        @RenderBody()
+    </main>
+
+    <footer class="border-top text-muted text-center">
+        <div class="container p-3">
+            <p style="margin: 0">Copy Right &copy;Book Store @DateTime.Now.Year</p>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/lib/twitter-bootstrap/js/bootstrap.js"></script>
+
+    @RenderSection("scripts", false)
+</body>
+</html>

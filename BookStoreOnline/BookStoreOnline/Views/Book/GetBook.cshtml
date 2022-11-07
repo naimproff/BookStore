@@ -1,0 +1,88 @@
+﻿@model BookModel
+
+<section class="container mb-5">
+    <h1 class="display-5">Book Details</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="/images/slider1.jpg" class="d-block w-100" alt="Slider Image">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/images/slider2.jpg" class="d-block w-100" alt="Slider Image">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/images/slider3.png" class="d-block w-100" alt="Slider Image">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>@Model.Title</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 fst-italic">
+                    <a href="#" class="text-primary text-decoration-none">By: @Model.Author</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="lead">@Model.Description</p>
+                    <a href="#" class="btn btn-sm btn-outline-dark">Read Now</a>
+                    <hr />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item"><span class="fw-bold">Category - </span> @Model.Category</li>
+                        <li class="list-group-item"><span class="fw-bold">Total Pages - </span> @Model.TotalPages</li>
+                        <li class="list-group-item"><span class="fw-bold">Language - </span> @Model.Language</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 bg-light">
+    <div class="container">
+        <h3>Similar Books</h3>
+        <div class="row">
+            @for (int i = 0; i < 5; i++)
+            {
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm border-0 rounded-0">
+                        <img src="~/images/slider2.jpg" />
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="#" class="btn btn-sm btn-outline-dark">Book Details</a>
+                                </div>
+                                <small class="text-muted">Author Name</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
